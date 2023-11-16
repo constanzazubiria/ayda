@@ -1,0 +1,98 @@
+version: "3.1"
+
+nlu:
+
+- intent: saludo
+  examples: |
+      - hola
+      - holaaaa
+      - buenas
+      - holis
+      - que ondusss
+      - que tal
+      - buen dia
+      - buenas tardes
+      - buendi
+      - jelou
+      - como anda la banda  
+      
+- intent: despedida
+  examples: |
+    - chau
+    - adios
+    - chausito
+    - chauchis
+    - adioos!
+    - seguimos luego
+    - hasta luego
+    - nos vemos despues
+
+- intent: que_ver
+  examples: |
+    - que serie puedo ver
+    - que serie me recomendas
+    - alguna serie que me recomiendes
+    - alguna serie que digas wow
+    - algun peliculon
+    - algun serion
+    - alta pelicula
+    - quiero ver una peliculaza
+    - me gustaria ver una pelicula
+
+- intent: genero
+  examples: |
+    - comedia
+    - thiller
+    - suspenso
+    - drama
+    - romance
+    - juvenil
+    - musical
+    - accion
+    - tragicomico
+    - aventura
+    - ciencia ficcion
+    - terror
+    - documental
+    
+- intent: recomendaciones
+  examples: |
+    - que pelicula me recomendas
+    - quiero ver una pelicula de comedia que me recomendas
+    - quiero ver una pelicula de romance que me recomendas
+    - quiero ver una pelicula de terror que me recomendas
+    - quiero ver una serie que me recomendas
+    - me gusta el genero romance que me recomendas ver?
+    - quiero recomendaciones para maratonear
+
+- intent: lista_de_reproduccion
+  examples: |
+    - quiero agregar a mi lista la pelicula
+    - agrego a la lista la serie
+    - saco de la lista la serie
+
+- intent: eliminar_de_lista_reproduccion
+  examples: |
+    - elimino de la lista
+    - quiero borrar de la lista
+    - sacar de la lista 
+
+- intent: ver_puntuacion
+  examples: |
+    - quiero ver la puntuacion de 
+    - cual es la puntuacion de 
+    - cuantas estrellas tiene
+    - cuanta puntuacion tiene
+    - que puntaje tiene
+
+- intent: cambiar_idioma
+  examples: |
+    - ingles
+    - portugues
+    - frances
+    - italiano
+    - arabe
+    - chino
+    - japones
+    - aleman
+    - castellano

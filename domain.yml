@@ -1,0 +1,137 @@
+version: "3.1"
+  
+intents:
+    - saludo
+    - despedida
+    - que_ver
+    - genero
+    - recomendaciones
+    - lista_de_reproduccion
+    - eliminar_de_lista_reproduccion
+    - ver_puntuacion
+    - cambiar_idioma
+    
+entities:
+    - pelicula_encontrada
+    - serie_encontrada
+    - contenido_title
+    - genre
+    - actor_o_actriz
+    - nuevo_idioma
+    - puntaje
+    - tipo_contenido
+    - contenido_id
+    - lista_de_reproduccion_id
+    - lenguaje
+    
+actions: 
+  - action_recomendar_contenido
+  - action_reproducir_contenido
+  - action_agregar_a_lista_reproduccion
+  - action_eliminar_de_lista_reproduccion
+  - action_mostrar_lista_reproduccion
+  - action_cambiar_idioma
+  - action_ver_puntuacion
+  - action_saludar
+  - action_despedir
+  - action_buscar_contenido_por_nombre
+  - action_buscar_por_actor_o_actriz
+  - actionUtterDesconocido
+  
+slots:
+
+  pelicula_encontrada:
+    type: text
+    mappings: 
+      - type: from_entity
+        entity: pelicula_encontrada
+        
+  serie_encontrada:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: serie_encontrada
+       
+  contenido_title:
+      type: text
+      mappings:
+        - type: from_entity
+          entity: contenido_title
+      
+  genre:
+      type: text
+      mappings:
+        - type: from_entity
+          entity: genre
+                    
+  actor_o_actriz:
+      type: text
+      mappings:
+        - type: from_entity
+          entity: actor_o_actriz
+          
+  nuevo_idioma:
+      type: text
+      mappings:
+        - type: from_entity
+          entity: nuevo_idioma
+          
+  puntaje:
+      type: text
+      mappings:
+        - type: from_entity
+          entity: puntaje
+          
+  tipo_contenido:
+      type: text
+      mappings:
+        - type: from_entity
+          entity: tipo_contenido
+              
+  contenido_id:
+      type: float
+      mappings:
+        - type: from_entity
+          entity: contenido_id  
+  
+  lista_de_reproduccion_id:
+      type: text
+      mappings:
+        - type: from_entity
+          entity: lista_de_reproduccion_id
+          
+
+ 
+responses:
+  
+  utter_recomendar_contenido: 
+  - text: "Aquí tienes algunas opciones que coinciden con tu búsqueda {contenido_title}, {genre}, {actor_o_actriz}. ¡Espero que lo disfrutes!"
+
+  utter_reproduccion:
+  - text: "Se esta reproduciendo {contenido_title}, espero que la disfrutes!"
+    
+  utter_agregar_a_lista_reproduccion:
+  - text: "Se ha agregado {contenido_title} a tu lista de reproduccion!"
+
+  utter_cambiar_idioma:
+  - text: "Se a cambiado el idioma a {nuevo_idioma}"
+ 
+  utter_eliminar_contenido:
+  - text: "Se a eliminado de la lista de reproduccion a {tipo_contenido}"
+  
+  utter_ver_puntuacion:
+  - text: "La puntuacion es de {puntaje} estrellas"
+  
+  utter_despedida:
+  - text: "Adios :( , vuelve pronto a Netflix para seguir disfrutando!"
+
+  utter_saludo:
+  - text: "Bienvenido a Netflix! que te gustaria ver hoy?"
+
+  utter_desconocido:
+    - text: "No entendí lo que quisiste decir."
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

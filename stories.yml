@@ -1,0 +1,85 @@
+version: "3.1"
+
+stories:
+
+- story: Saludo
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+
+- story: Búsqueda de Contenido por Nombre
+  steps:
+  - intent: que_ver
+    entities:
+      - contenido_title
+  - action: action_buscar_contenido_por_nombre
+  - intent: que_ver
+    entities:
+      - contenido_title
+  - action: utter_reproduccion
+
+- story: Buscar Contenido con Actor/Actriz
+  steps:
+  - intent: que_ver
+    entities:
+      - actor_o_actriz
+  - action: action_buscar_por_actor_o_actriz
+  - intent: recomendaciones
+  - action: action_recomendar_contenido
+  - intent: que_ver
+    entities:
+      - contenido_title
+  - action: utter_reproduccion
+
+- story: Recomendación por Género
+  steps:
+  - intent: genero
+    entities:
+      - genre
+  - action: utter_recomendar_contenido
+  - intent: que_ver
+    entities:
+      - contenido_title
+  - action: utter_reproduccion
+
+- story: Agregar a Lista de Reproducción
+  steps:
+  - intent: lista_de_reproduccion
+    entities:
+      - lista_de_reproduccion_id
+  - action: utter_agregar_a_lista_reproduccion
+
+- story: Mostrar Lista de Reproducción
+  steps:
+  - intent: lista_de_reproduccion
+  - action: action_mostrar_lista_reproduccion
+
+- story: Eliminar Contenido de Lista de Reproducción
+  steps:
+  - intent: eliminar_de_lista_reproduccion
+    entities:
+      - lista_de_reproduccion_id
+  - action: action_mostrar_lista_reproduccion
+  - intent: eliminar_de_lista_reproduccion
+  - action: utter_eliminar_contenido
+
+- story: Cambiar de Idioma
+  steps:
+    - intent: cambiar_idioma
+      entities:
+        - nuevo_idioma
+    - action: utter_cambiar_idioma
+
+- story: Ver Puntuación de Contenido
+  steps:
+  - intent: que_ver
+    entities:
+      - contenido_title
+  - action: action_buscar_contenido_por_nombre
+  - intent: ver_puntuacion
+  - action: utter_ver_puntuacion
+
+- story: Despedida
+  steps:
+  - intent: despedida
+  - action: utter_despedida
